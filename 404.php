@@ -11,33 +11,44 @@ if (!defined('ABSPATH')) exit;
 get_header();
 ?>
 
-<?php get_template_part('inc/hero-header'); ?>
+	<main id="container-404" role="main">
+		<article id="post-404">
 
-	<main id="container-404"class="container" role="main">
-		<article class="content-not-found">
+			<?php get_template_part('inc/page-heading', '404'); ?>
 
-			<section>
-				<p>
-					<?php _e('The page you were looking for was not found. Please try one of the following:', 'balefire'); ?>
+			<div class="wrapper search-page-content">
+				
+				<p class="center-text">
+					<?php _e('We couldn\'t find the information you\'re looking for. Search our website or click a link below.', 'balefire'); ?>
 				</p>
-				<ul class="no-bullet">
-					<li>
-						<?php _e('Check your spelling', 'balefire'); ?>
-					</li>
-					<li>
-						<?php _e('Return to the', 'balefire'); ?><a href="<?php echo home_url(); ?>"><?php _e('home page', 'balefire'); ?></a>
-					</li>
-					<li>
-						<?php _e('Click the', 'balefire'); ?> <a href="javascript:history.back()"><?php _e('back button', 'balefire'); ?></a>
-					</li>
-				</ul>
-			</section>
-
-			<section class="search">
-				<p><?php _e('You can also try searching:', 'balefire'); ?></p>
-				<?php get_template_part('inc/search-form'); ?>
-			</section>
+			</div>
 			
+			<div class="search-bar">
+			<div class="wrapper">
+				<?php get_template_part('inc/search-form'); ?>
+			</div>
+		</div>
+		
+		<div class="wrapper">
+			<ul id="search-page-nav-links" class="no-bullets">
+				<li>
+					<a href="<?php echo esc_url(home_url('/')); ?>"><?php _e('Home Page', 'balefire'); ?></a>
+				</li>
+				<li>
+					•
+				</li>
+				<li>
+					<a href="<?php echo esc_url(home_url('/contact-us/')); ?>"><?php _e('Contact Us', 'balefire'); ?></a>
+				</li>
+				<li>
+					•
+				</li>
+				<li>
+					<a href="<?php echo esc_url(home_url('/sitemap/')); ?>"><?php _e('Sitemap', 'balefire'); ?></a>
+				</li>
+			</ul>
+		</div>
+
 		</article>
 	</main>
 

@@ -8,11 +8,9 @@ get_header(); ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 	<main>
-
+		<?php get_template_part('inc/page-heading'); ?>
+		
 		<section id="content" class="wrapper">
-			<h1 class="page-title h1">
-				<?php the_title(); ?>
-			</h1>
 
 			<?php the_content(); ?>
 		

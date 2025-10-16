@@ -10,9 +10,10 @@ get_header();
 ?>
 
 <main id="main" class="site-main">
-    <div class="container">
-        
-        <?php get_template_part('inc/archive-header'); ?>
+
+	<?php get_template_part('inc/page-heading'); ?>
+	
+	<div class="container">
         
         <?php if (have_posts()) : ?>
             

@@ -89,3 +89,68 @@ function balefire_theme_support() {
 } /* end theme support */
 
 add_action( 'after_setup_theme', 'balefire_theme_support' );
+
+
+/**
+ * Custom Excerpt Lengths
+ * 
+ * Usage in templates:
+ * echo balefire_excerpt_small();   // 15 words
+ * echo balefire_excerpt_medium();  // 30 words (default)
+ * echo balefire_excerpt_large();   // 55 words
+ * 
+ * Or with custom length:
+ * echo balefire_custom_excerpt(20);
+ */
+
+// Small excerpt - 15 words
+function balefire_excerpt_small() {
+    return balefire_custom_excerpt(15);
+}
+
+// Medium excerpt - 30 words (default WordPress length)
+function balefire_excerpt_medium() {
+    return balefire_custom_excerpt(30);
+}
+
+// Large excerpt - 55 words
+function balefire_excerpt_large() {
+    return balefire_custom_excerpt(55);
+}
+
+// Custom excerpt with specified word count
+function balefire_custom_excerpt($word_count = 30) {
+    global $post;
+    
+    // Get the excerpt or content
+    if (has_excerpt()) {
+        $excerpt = get_the_excerpt();
+    } else {
+        $excerpt = $post->post_content;
+    }
+    
+    // Strip shortcodes and HTML tags
+    $excerpt = strip_shortcodes($excerpt);
+    $excerpt = wp_strip_all_tags($excerpt);
+    
+    // Trim to word count
+    $excerpt = wp_trim_words($excerpt, $word_count, '...');
+    
+    return $excerpt;
+}
+
+// Override default excerpt length (optional - uncomment to use globally)
+/*
+function balefire_excerpt_length($length) {
+    return 30; // Change default excerpt length
+}
+add_filter('excerpt_length', 'balefire_excerpt_length', 999);
+*/
+
+// Change excerpt "more" text (optional - uncomment to use)
+/*
+function balefire_excerpt_more($more) {
+    return '...';
+}
+add_filter('excerpt_more', 'balefire_excerpt_more');
+*/

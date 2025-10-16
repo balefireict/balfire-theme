@@ -9,13 +9,13 @@ get_header(); ?>
     while (have_posts()):
         the_post(); ?>
 
-	<main role="main" id="main-content" class="wrapper">
-		<section>
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<h1><?php echo esc_html(get_the_title()); ?></h1>
+	<main role="main" id="main-content">
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<?php get_template_part('inc/page-heading'); ?>
+			<div class="wrapper">
 				<?php the_content(); ?>
-			</article>
-		</section>
+			</div>
+		</article>
 	</main>
 
 	<?php endwhile; ?>

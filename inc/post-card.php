@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) exit;
             <?php if (has_post_thumbnail()) : ?>
                 <?php the_post_thumbnail('medium'); ?>
             <?php else : ?>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/no-image.svg" alt="<?php the_title_attribute(); ?>" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/no-image.svg" alt="No Image">
             <?php endif; ?>
         </a>
     </div>

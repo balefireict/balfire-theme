@@ -9,6 +9,8 @@ get_header(); ?>
 	<?php get_template_part('inc/hero-header'); ?>
 
 	<div class="container">
+		<?php get_template_part('inc/page-heading'); ?>
+		
 		<?php if (have_posts()): while (have_posts()): the_post(); ?>
 			<section>
 				<?php get_template_part('inc/loop', 'single'); ?>
