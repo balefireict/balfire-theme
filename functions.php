@@ -15,6 +15,8 @@ $function_files = [
     'sidebar',
     'comments',
     'page-navi',
+    'pagination',
+    'partials',
     'translation/translation',
     'disable-emoji',
     'related-posts',

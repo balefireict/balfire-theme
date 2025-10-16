@@ -1,20 +1,41 @@
 <?php
-declare(strict_types=1);
+/**
+ * Archive Template
+ * Used for category, tag, author, date, and custom post type archives
+ */
 
 if (!defined('ABSPATH')) exit;
 
-get_header(); ?>
-<main>
-	<section class="container">
-		<?php if (have_posts()):
-            while (have_posts()):
-                the_post(); ?>
-			<?php get_template_part('inc/loop', 'archive'); ?>
-		<?php endwhile; ?>	
-		<?php else: ?>
-			<?php get_template_part('inc/content', 'missing'); ?>
-		<?php endif; ?>
-	</section>
+get_header();
+?>
+
+<main id="main" class="site-main">
+    <div class="container">
+        
+        <?php get_template_part('inc/archive-header'); ?>
+        
+        <?php if (have_posts()) : ?>
+            
+            
+            <div class="posts-grid">
+                <?php
+                while (have_posts()) :
+                    the_post();
+                    get_template_part('inc/post-card');
+                endwhile;
+                ?>
+            </div>
+            
+            <?php get_template_part('inc/pagination'); ?>
+            
+        <?php else : ?>
+            
+            <?php get_template_part('inc/no-results'); ?>
+            
+        <?php endif; ?>
+        
+    </div>
 </main>
-<?php // get_sidebar(); ?>
-<?php get_footer(); ?>
+
+<?php
+get_footer();
