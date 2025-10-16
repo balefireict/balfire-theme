@@ -52,6 +52,7 @@ body {
     position: relative;
     width: 100%;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 body.menu-open {
@@ -355,10 +356,11 @@ body.menu-open .nav-links {
 .nav-links #nav-main {
     display: block;
     width: 100%;
-    margin-top: 40px;
+    margin-top: 60px;
     transition: transform 0.3s ease-in-out;
     font-size: 116%;
     line-height: 1.2;
+    border-top: 1px solid #212121;
 }
 
 .nav-links #nav-main li {
@@ -367,7 +369,7 @@ body.menu-open .nav-links {
 }
 
 .nav-links #nav-main li:last-child {
-    border-bottom: none;
+    border-bottom: 1px solid #212121;
 }
 
 .nav-links #nav-main li a {
@@ -455,10 +457,10 @@ body.menu-open .nav-links {
     position: fixed;
     top: 0;
     left: 100%;
-    width: 92vw;
+    width: 100vw;
     height: 100vh;
     background: #000;
-    padding: 0;
+    padding: 60px 0 0 0;
     margin: 0;
     transition: transform 0.3s ease-in-out;
     z-index: 1001;
@@ -466,25 +468,24 @@ body.menu-open .nav-links {
 
 .nav-links #nav-main li .sub-menu.active {
     display: block;
-}
-
-.nav-links #nav-main.submenu-active,
-.nav-links #nav-main .sub-menu.submenu-active {
-    transform: translate(-100%);
+    transform: translateX(-100%);
 }
 
 #nav-main li .sub-menu .sub-menu {
     position: fixed;
     top: 0;
     left: 100%;
-    width: 92vw;
+    width: 100vw;
     height: 100vh;
+    background: #000;
+    padding: 60px 0 0 0;
+    margin: 0;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1002;
 }
 
-#nav-main li:last-child .sub-menu .sub-menu,
-#nav-main li.edge .sub-menu .sub-menu {
-    left: 100%;
-    right: auto;
+#nav-main li .sub-menu .sub-menu.active {
+    transform: translateX(-100%);
 }
 
 #nav-main li.menu-item-has-children>a {
@@ -824,6 +825,22 @@ body.menu-open .nav-links {
     margin-bottom: 10px;
 }
 
+/* BAKERY OVERRIDES */
+body .vc_row.wpb_row.vc_row-fluid {
+    overflow-x: hidden !important;
+}
+
+body .vc_row.wpb_row.vc_row-fluid.vc_row-no-padding {
+    overflow-x: hidden !important;
+}
+
+/* Fix reviews container in full-width Bakery rows */
+.vc_row-no-padding .reviews-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+}
+
 /* 
 ///// FOOTER /////
 */
@@ -1086,8 +1103,12 @@ a.vc_inline-link {
     position: relative;
 }
 
+.secondary-nav-wrapper #nav-secondary li:first-child {
+    border-top: none;
+}
+
 .secondary-nav-wrapper #nav-secondary li:last-child {
-    border-bottom: none;
+    border-bottom: 1px solid #212121;
 }
 
 .secondary-nav-wrapper #nav-secondary li a {
@@ -1097,21 +1118,6 @@ a.vc_inline-link {
     text-decoration: none;
 }
 
-.secondary-nav-wrapper #nav-secondary li a:after {
-    content: "";
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: #fff;
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
-}
-
-.secondary-nav-wrapper #nav-secondary li a:hover:after {
-    transform: scaleX(1);
-}
 
 /* Secondary nav submenu styles - match primary nav */
 .secondary-nav-wrapper #nav-secondary .sub-menu {
