@@ -1,0 +1,124 @@
+/*--- Variables ---*/
+:root {
+    /*--- Colors ---*/
+    --brand-orange: #EB751F;
+	--brand-orange-darker: #ab5c23;
+	--overlay-orange: rgba(235, 117, 31, 0.90);
+    --dark: #454545;
+	--white: #ffffff;
+    --light: #f2f2f2;
+	--light-gray: #F4F4F4;
+	--mid-gray: #B1ACAC;
+	--darker-gray: #797878;
+	--black: #000000;
+    --star-background: #EDA045;
+
+	--text-white: var(--white);
+	--text-dark: var(--dark);
+	--text-brand-orange: var(--brand-orange);
+
+    /*--- Font Families ---*/
+    --font-default: "Wix Madefor Text", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+
+	/* Fluid Type for fonts */
+	--font-2xs: clamp(0.45rem, -0.02vi + 0.5rem, 0.5rem);
+	--font-xs: clamp(0.64rem, -0.01vi + 0.64rem, 0.63rem);
+	--font-sm: clamp(0.825rem, 0.08vi + 0.825rem, 0.9rem);
+	--font-base: clamp(1rem, 0.23vi + 0.94rem, 1.125rem);
+	--font-md: clamp(1.15rem, 0.375vi + 1.05rem, 1.25rem);
+	--font-lg: clamp(1.35rem, 0.45vi + 1.14rem, 1.5rem);
+	--font-xl: clamp(1.75rem, 0.79vi + 1.36rem, 2.125rem);
+	--font-2xl: clamp(1.95rem, 1.29vi + 1.63rem, 2.66rem);
+	--font-3xl: clamp(2.44rem, 2.02vi + 1.94rem, 3.55rem);
+	--font-4xl: clamp(3.05rem, 3.06vi + 2.29rem, 4.73rem);
+	--font-5xl: clamp(3.81rem, 4.54vi + 2.68rem, 6.31rem);
+	--font-hero-home: clamp(1.563rem, 2.5vi + 0.75rem, 3rem);
+	--font-hero: clamp(2.375rem, 2.625vi + 0.55rem, 3rem);
+
+	/* Custom Fluid font pairs */
+	--font-md-l: clamp(1rem, 0.9348rem + 0.3261vw, 1.25rem);
+	--font-cta-hl: clamp(1.5rem, 1.5065rem + 1.1087vw, 1.875rem);
+	--font-lg-xl: clamp(2.125rem, 1.7065rem + 1.1087vw, 3rem);
+	--font-md-l: clamp(1rem, 0.8261rem + 0.8696vw, 1.5rem);
+	--font-lg-2xl: clamp(2.375rem, 1.0978rem + 3.3967vw, 4rem);
+	--font-nav: clamp(1.38rem, 0.92rem + 0.57vi, 1.06rem);
+	--font-team-grid-title: clamp(1.125rem, 1.0326rem + 0.4348vw, 1.375rem);
+
+	/* Fluid Letter Spacing */
+	--letter-spacing-xs: clamp(0.01em, -0.01em + 0.05em, 0.02em);
+	--letter-spacing-sm: clamp(0.02em, -0.01em + 0.05em, 0.03em);
+	--letter-spacing-base: clamp(0.03em, -0.01em + 0.05em, 0.04em);
+	--letter-spacing-md: clamp(0.04em, -0.01em + 0.05em, 0.05em);
+	--letter-spacing-lg: clamp(0.05em, -0.01em + 0.05em, 0.06em);
+
+    /*--- Spacing Clamps ---*/
+	--space-5xs: clamp(0.25rem, 0.2283rem + 0.1087vw, 0.3125rem);
+	--space-4xs: clamp(0.3125rem, 0.2908rem + 0.1087vw, 0.375rem);
+	--space-3xs: clamp(0.375rem, 0.3315rem + 0.2174vw, 0.5rem);
+	--space-2xs: clamp(0.5rem, 0.4565rem + 0.2174vw, 0.625rem);
+	--space-xs: clamp(0.75rem, 0.6848rem + 0.3261vw, 0.9375rem);
+	--space-sm: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
+	--space-md: clamp(1.5rem, 1.3696rem + 0.6522vw, 1.875rem);
+	--space-lg: clamp(2rem, 1.8261rem + 0.8696vw, 2.5rem);
+	--space-xl: clamp(3rem, 2.7391rem + 1.3043vw, 3.75rem);
+	--space-2xl: clamp(4rem, 3.6522rem + 1.7391vw, 5rem);
+	--space-3xl: clamp(6rem, 5.4783rem + 2.6087vw, 7.5rem);
+	--space-hero-title: clamp(8vh, 5.5vh + 28vw, 36vh);
+
+	/* One-up pairs */
+	--space-5xs-4xs: clamp(0.25rem, 0.2065rem + 0.2174vw, 0.375rem);
+	--space-4xs-3xs: clamp(0.3125rem, 0.2473rem + 0.3261vw, 0.5rem);
+	--space-3xs-2xs: clamp(0.375rem, 0.288rem + 0.4348vw, 0.625rem);
+	--space-2xs-xs: clamp(0.5rem, 0.3478rem + 0.7609vw, 0.9375rem);
+	--space-xs-sm: clamp(0.75rem, 0.5761rem + 0.8696vw, 1.25rem);
+	--space-sm-md: clamp(1rem, 0.6957rem + 1.5217vw, 1.875rem);
+	--space-md-lg: clamp(1.5rem, 1.1522rem + 1.8vw, 2.75rem);
+	--space-lg-xl: clamp(2rem, 1.3913rem + 3.0435vw, 3.75rem);
+	--space-xl-2xl: clamp(3rem, 2.3043rem + 3.4783vw, 5rem);
+	--space-2xl-3xl: clamp(4rem, 2.7826rem + 6.087vw, 7.5rem);
+
+	/* Custom space pairs */
+	--space-6xs-md: clamp(0.125rem, 1.4375rem - 1.3125vw, 1rem);
+	--space-2xs-sm: clamp(0.72rem, 0.04vi + 0.71rem, 0.74rem);
+	--space-sm-lg: clamp(1rem, 0.4783rem + 2.6087vw, 2.5rem);
+	--space-sm-xl: clamp(1.125rem, 0.212rem + 4.5652vw, 3.75rem);
+	--space-xs-xl: clamp(0.75rem, -0.2935rem + 5.2174vw, 3.75rem);
+	--space-2xs-lg: clamp(0.25rem, -0.3478rem + 3.0435vw, 2.75rem);
+	--space-none-2xl: clamp(0rem, -1.0870rem + 5.4348vw, 5rem);
+	--space-sm-2xl: clamp(1.125rem, -0.2228rem + 5vw, 5rem);
+	--space-md-xl: clamp(1.5rem, 0.6304rem + 4.3478vw, 3.75rem);
+	--space-md-2xl: clamp(1.5rem, -0.2555rem + 6.9875vw, 5rem);
+	--space-md-3xl: clamp(1.6875rem, -0.3342rem + 10.1087vw, 7.5rem);
+	--space-lg-3xl: clamp(2.25rem, 0.4239rem + 9.1304vw, 7.5rem);
+	--space-2xl-3xl: clamp(2.75rem, 1.4304rem + 2.3478vw, 3.25rem);
+
+    /*--- Sizes ---*/    
+    --star-size: 40px;
+
+    /* Line Heightsv
+       - Tight: for headings and compact text
+       - Base: for normal body text
+       - Relaxed: for better readability in longer paragraphs
+       - Loose: for emphasized or larger text blocks
+    */
+    /* Compact line heights for headings and tight text */
+    --line-height-none: 0.9;      /* Headings, buttons */
+    --line-height-snug: 1;     /* Subheadings */
+
+
+	--line-height-tight: 1.25; 
+    
+    /* Standard line heights for body text */
+    --line-height-base: 1.4;       /* Body text */
+    --line-height-normal: 1.5;    /* Larger body text */
+    
+    /* Relaxed line heights for better readability */
+    --line-height-relaxed: 1.75;  /* Long-form content */
+    --line-height-loose: 2;        /* Large text blocks */
+    
+    /* Special cases */
+    --line-height-none: 0.9;                                   /* Reset, icons */
+    --line-height-inherit: inherit;                          /* Inherit from parent */
+	--line-height-hero: 1.2;
+
+}

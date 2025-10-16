@@ -1,0 +1,103 @@
+.home {
+    background-color: inherit;
+    color: inherit;
+}
+
+#home-content {
+    margin-top: var(--space-sm-lg);
+}
+
+#centered-text-md p {
+    padding: 0 0 var(--space-md);
+}
+
+.home .grid-container {
+    margin: var(--space-md-xl) auto;
+}
+
+#grid-50-text h2 {
+    font-size: var(--font-2xl);
+    font-weight: 600;
+    margin-bottom: var(--space-2xs);
+    line-height: var(--line-height-tight);
+}
+
+#grid-50-text h3 {
+    font-weight: 500;
+    margin-bottom: var(--space-sm);
+    margin: 0;
+    line-height: var(--line-height-tight);
+}
+
+#grid-50-text p.subhead {
+    color: var(--dark);
+    font-size: calc(var(--font-xl) - 0.5rem);
+    font-weight: 500;
+    margin: 0 0 var(--space-md);
+    line-height: var(--line-height-tight);
+}
+
+#grid-50-text p {
+    font-size: var(--font-md);
+    color: var(--dark);
+    margin-bottom: var(--space-md);
+    max-width: 33rem;
+}
+
+#grid-50-text .btn {
+    margin-top: var(--space-3xs);
+}
+
+#home-team-grid {
+    background: linear-gradient(180deg, #f4f4f4 0%, #ffffff 50%);
+    margin: var(--space-md) auto var(--space-md-xl);
+    position: relative;
+    text-align: center;
+}
+
+#home-team-grid .container {
+    position: relative;
+    z-index: 3;
+}
+
+#home-team-grid h2 {
+    font-size: calc(var(--font-2xl) * 1.08);
+    font-weight: 600;
+    padding: var(--space-md-xl) var(--space-2xs) var(--space-5xs);
+    margin-bottom: auto;
+    line-height: var(--line-height-tight);
+}
+
+#home-team-grid h3 {
+    font-size: calc(var(--font-lg) * 0.85);
+    padding: var(--space-xs) 0 var(--space-5xs);
+    margin-bottom: auto;
+    line-height: var(--line-height-tight);
+}
+
+#home-team-grid .team-subhead {
+    font-size: var(--font-xl);
+    font-weight: 600;
+    margin-bottom: var(--space-xl);
+}
+
+#home-team-grid .white-box-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/*--- MD 48rem (768px) ---*/
+@media (width >= 48rem) {
+}
+
+/*--- LG 64rem (1024px) ---*/
+@media (width >= 64rem) {
+    .home .hero .container .content h1 {
+        max-width: 40rem;
+    }
+}
+
+/*--- XL Screens 80rem (1280px) ---*/
+@media (width >= 80rem) {
+}

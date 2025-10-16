@@ -1,0 +1,269 @@
+/*--- START: footer#site-footer ---*/
+footer#site-footer {
+    width: 100%;
+    height: auto;
+    background-color: var(--dark);
+}
+footer#site-footer p {
+    color: var(--mid-gray);
+}
+p.copyright,
+p.siteby,
+p.siteby a {
+    font-weight: 400;
+    color: var(--mid-gray);
+    margin-bottom: var(--space-4xs);
+}
+.siteby a:hover {
+    color: var(--brand-orange);
+}
+footer#site-footer ul,
+ul#footer-links.nav li {
+    padding: initial;
+    margin: initial;
+    position: relative;
+    color: var(--white);
+}
+ul#footer-links.nav li a {
+    color: var(--white);
+    font-weight: 400;
+}
+ul#footer-links.nav li a:hover {
+    color: var(--brand-orange);
+}
+.footer-connect a.btn,
+.footer-connect a {
+    font-size: var(--font-base);
+    font-weight: 500;
+    line-height: var(--line-height-tight);
+    padding: var(--space-sm) var(--space-lg);
+    color: var(--white);
+    outline: none;
+    display: inline-block;
+    border-radius: 5rem;
+    border: 2px solid var(--brand-orange);
+    background-color: transparent;
+    transition: all 0.5s ease;
+    margin: auto auto;
+}
+.btn:hover,
+.button:hover,
+input[type="submit"]:hover,
+.btn:active,
+.button:active,
+input[type="submit"]:active,
+.page-numbers:hover,
+.page-numbers:active,
+.page-numbers.current,
+.wp-block-button__link:hover,
+.wp-block-button__link:active {
+    color: var(--white);
+    border-color:var(--light-gray);
+    background-color: var(--brand-orange);
+}
+.edit-footer {
+    width: 100%;
+    background-color: var(--light-gray);
+    color: var(--white);
+    padding: var(--space-sm);
+}
+.edit-footer .container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.edit-footer .btn {
+    background-color: var(--brand-orange);
+    color: var(--white);
+}
+a.edit-post-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: 0.25rem;
+    background-color: var(--brand-orange);
+    color: var(--white);
+    text-decoration: none;
+    margin: auto var(--space-5xs);
+}
+a.edit-post-link:hover {
+    background-color: var(--brand-orange-darker);
+}
+a.vc_inline-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: 0.25rem;
+    background-color: var(--dark);
+    color: var(--white);
+    text-decoration: none;
+    margin: var(--space-sm) var(--space-5xs);
+}
+a.vc_inline-link:hover {
+    background-color: var(--black);
+}
+
+/* styles for viewport width up to 768px */
+@media (width <= 768px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var(--space-4xs);
+    }
+    .footer-logo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        margin: auto auto;
+        padding: var(--space-md) var(--space-md) var(--space-3xs);
+        order: 1;
+    }
+    .footer-logo svg {
+        width: 100%;
+        height: auto;
+        width: 6.75rem;
+        margin: var(--space-sm) auto;
+    }    
+    .footer-content {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto auto var(--space-sm);
+        order: 3;
+    }
+    .copyright span {
+        display: block;
+    }
+    ul#footer-links.nav {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        list-style: none;
+        text-align: center;
+        margin: auto auto var(--space-md);
+        gap: var(--space-sm);
+    }    
+    ul#footer-links.nav li a {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 var(--space-sm);
+        margin: auto auto;
+    }    
+    ul#footer-links.nav li a:hover {
+        color: var(--mid-gray);
+        text-decoration: underline;
+    }
+    p.copyright,
+    p.siteby,
+    p.siteby a {
+        font-size: var(--font-sm);
+        line-height: var(--line-height-base);
+    }
+    p.siteby {
+        padding: 0 var(--space-xs) var(--space-sm-md); 
+    }
+    .footer-connect {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var(--space-2xs);
+        margin: var(--space-4xs) auto var(--space-sm);
+        order: 2;
+        padding-bottom: var(--space-xs);
+    }
+}
+
+/* styles for viewport width from 768px and up */
+@media (width >= 768px) {
+    footer#site-footer {
+        padding: var(--space-md-lg) 0;
+    }
+    .footer-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--space-lg-xl);
+        margin: auto 0;
+    }
+    .footer-logo {
+        width: 8rem;
+        height: auto;
+        margin: 0;
+        order: 1;
+    }
+    .footer-logo svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+    .footer-content {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin: auto 0;
+        order: 2;
+        flex: 1;
+    }
+    ul#footer-links.nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        list-style: none;
+        text-align: left;
+        margin: 0 0 var(--space-sm) 0;
+        padding: var(--space-3xs) 0 0;
+        gap: var(--space-lg);
+    }
+    .footer-connect {
+        order: 3;
+        align-self: center;
+    }
+    .edit-footer .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    } 
+}
+
+/* styles for viewport width from 1024px and up */
+@media (width >= 1024px) {
+
+}
+
+/* Range between values - styles for viewport width between 768px and 1024px*/
+@media (768px <= width <= 1024px) {}
+
+/* Minimum width - styles for viewport width from 1024px and up */
+@media (width >= 1024px) {}
+
+/* Minimum width */
+/* styles for viewport width from 1024px and up */
+@media (width >= 1280px) {}
+
+/*--- END: footer#site-footer ---*/

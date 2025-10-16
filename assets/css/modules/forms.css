@@ -1,0 +1,79 @@
+/*------------------------------------*\
+    FORMS
+\*------------------------------------*/
+
+.gform_wrapper.contact-main_wrapper {
+    background: var(--light-gray);
+    padding: var(--space-sm-md) var(--space-md-lg);
+    font-weight: 400;
+}
+
+.contact-main_wrapper h2 {
+    text-align: center;
+    padding-top: var(--space-sm);
+}
+
+.contact-main_wrapper label {
+    font-size: var(--font-base);
+    font-weight: 400;
+    color: var(--dark);
+}
+
+.gform_wrapper.gravity-theme .gfield_label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    padding: 0;
+}
+
+.gform_wrapper.gravity-theme #field_submit input, 
+.gform_wrapper.gravity-theme .gform_footer input {
+    align-self: flex-start;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+input[type="submit"] {
+    font-size: var(--font-base);
+    font-weight: 500;
+    line-height: var(--line-height-tight);
+    padding: calc(var(--space-2xs) + 2px) var(--space-lg);
+    margin: var(--space-sm) auto;
+    color: var(--black);
+    outline: none;
+    display: inline-block;
+    border-radius: 5rem;
+    border: 3px solid var(--brand-orange);
+    background-color: var(--white);
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    color: var(--white);
+    border-radius: 5rem;
+    border-color:var(--light-gray);
+    background-color: var(--brand-orange);
+}
+
+h2.gform_title {
+    margin: var(--space-sm-md) auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+h2.gform_title::before {
+    content: "";
+    display: inline-block;
+    width: 30.585px;
+    height: 30.585px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30.585' height='30.585' viewBox='0 0 30.585 30.585'%3E%3Cpath id='iconmonstr-paper-plane-1' d='M30.585,0,22.939,28.036,12.579,18.811,22.522,8.318,9.195,17.528,0,15.292ZM11.469,21.241v9.344l4.152-5.647Z' fill='%23eb751f'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+

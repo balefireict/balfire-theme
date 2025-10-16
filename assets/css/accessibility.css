@@ -1,0 +1,99 @@
+/* Accessibility Enhancements */
+.search-form {
+    position: relative;
+    max-width: 100%;
+}
+
+.search-form-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+}
+
+/* Focus States */
+.search-field:focus,
+.search-submit:focus,
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid #0074d9;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px rgba(0, 116, 217, 0.3);
+    text-decoration: underline;
+}
+
+/* Skip Links */
+.skip-link {
+    background-color: #0074d9;
+    color: white;
+    font-weight: 700;
+    left: 50%;
+    padding: 8px;
+    position: absolute;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    transform: translateY(0%);
+}
+
+/* Screen reader text */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Keyboard accessibility */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #0074d9;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+    .search-field:focus,
+    a:focus,
+    button:focus,
+    input:focus {
+        outline: 2px solid CanvasText;
+    }
+    
+    .search-submit {
+        border: 1px solid CanvasText;
+    }
+}
+
+/* Better link underlines */
+a {
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: from-font;
+}
+
+/* Improve readable line length */
+.entry-content p,
+.entry-summary p {
+    max-width: 70ch;
+}
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+} 

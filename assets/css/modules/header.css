@@ -1,0 +1,84 @@
+/*------------------------------------*\
+    HEADER
+\*------------------------------------*/
+#masthead {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+    background-color: transparent;
+}
+
+header#masthead .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-2.5xl-3xl) var(--space-sm);
+}
+
+#masthead.scrolled {
+    background-color: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: blur(var(--space-3xs));
+    backdrop-filter: blur(var(--space-3xs));
+}
+
+/* Logo Styles */
+a.header-logo {
+    display: flex;
+    width: 100%;
+    height: auto;
+    max-width: var(--space-3xl);
+}
+
+#main-logo {
+    display: inline-block;
+    height: var(--space-2xl);
+    width: auto;
+    margin: var(--space-3xs) auto;
+}
+
+/* SVG Logo Colors */
+#masthead a.header-logo svg .text-white {
+    color: var(--text-white);
+}
+
+#masthead a.header-logo svg .text-brand-orange {
+    color: var(--text-brand-orange);
+}
+
+#masthead.scrolled a.header-logo svg .text-white {
+    color: var(--text-dark);
+}
+
+#masthead.scrolled a.header-logo svg .text-brand-orange {
+    color: var(--text-brand-orange);
+}
+
+/* Header Variations */
+.header--transparent {
+    background-color: transparent;
+}
+
+.header--light {
+    background-color: var(--white);
+}
+
+.header--dark {
+    background-color: var(--dark);
+}
+
+/* Responsive Adjustments */
+@media (width <= 48rem) {
+    header#masthead .container {
+        padding: var(--space-2xs) var(--space-md);
+    }
+}
+
+@media (width >= 48rem) {
+    header#masthead .container {
+        padding: var(--space-xs) var(--space-lg);
+    }
+}
+

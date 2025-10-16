@@ -1,0 +1,518 @@
+/*--- Global---*/
+/*
+1rem: 	16px;
+1.5rem:	24px;
+2rem: 	32px;
+3rem: 	48px;
+4rem: 	64px;
+5rem:	80px;
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+    font: 400 16px var(--font-default);
+    background-color: var(--white);
+    color: var(--dark);
+}
+
+.btn,
+.btn:link,
+.btn:active,
+.btn:visited,
+.button,
+input [type="submit"] {
+    font-weight: 700;
+    text-decoration: none;
+    margin-bottom: var(--space-4xs);
+}
+
+header,
+footer,
+section,
+{
+    width: 100%;
+}
+
+a,
+a:link,
+a:visited,
+a:active,
+a:focus {
+    color: var(--brand-orange);
+    text-decoration: none;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    color: var(--brand-orange);
+    font-weight: 600;
+    line-height: var(--line-height-tight);
+    margin-block: var(--space-md);
+}
+
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    margin: auto 0 var(--space-md);
+}
+
+h1,
+.h1 {
+    font-size: var(--font-2xl);
+}
+
+h2,
+.h2 {
+    font-size: var(--font-xl);
+}
+
+h3,
+.h3 {
+    font-size: var(--font-lg);
+}
+
+h4,
+.h4 {
+    font-size: var(--font-md);
+}
+
+h5,
+.h5 {
+    font-size: var(--font-base);
+}
+
+h6,
+.h6 {
+    font-size: var(--font-sm);
+}
+
+.underline,
+span.underline::after,
+.orange-underline,
+span.orange-underline::after {
+    padding-bottom: 0.25rem;
+    border-bottom: 3px solid var(--brand-orange);
+}
+
+span.white-underline,
+.white-underline {
+    border-bottom: 3px solid var(--white);
+}
+
+p {
+    font-size: var(--font-base);
+    line-height: var(--line-height-normal);
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: var(--space-md);
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding: 0;
+    margin: auto 0 var(--space-md);
+    unicode-bidi: isolate;
+}
+
+hr {
+    margin: var(--space-xl) 0;
+}
+
+sup,
+sup.text-2xs {
+    vertical-align: super;
+}
+
+blockquote {}
+
+ul {
+    padding: 0 0 var(--space-md);
+    text-align: left;
+    list-style-type: disc;
+    margin: auto 0;
+    font-size: var(--font-base);
+}
+
+ul li {
+    padding: var(--space-2xs) var(--space-2xs);
+    position: relative;
+    align-items: center;
+    line-height: var(--line-height-base);
+}
+
+ul li::marker {
+      content: "•";
+}
+
+ul.no-bullet,
+ul.nav,
+#sidebar1 ul,
+.wp-block-blockgallery-masonry ul {
+    list-style-type: none;
+}
+
+ul.no-bullet li {
+    padding-left: 0;
+}
+
+nav ul li::marker,
+ul.no-bullet li::marker {
+    content: none;
+}
+
+ol {
+    padding-left: var(--space-3xs);
+    margin: var(--space-2xs) 0;
+    list-style: decimal;
+    list-style-position: inside;
+}
+
+ol li {
+    padding: var(--space-3xs) 0;
+    position: relative;
+    color: var(--brand-orange);
+}
+
+ol li span {
+    color: var(--text-dark);
+}
+
+img {
+    display: block;
+}
+
+img {
+    display: inherit;
+}
+
+table {
+    width: 100%;
+}
+
+table td {
+    padding: var(--space-3xs);
+}
+
+table img {
+    width: 100%;
+    height: auto;
+}
+
+.btn,
+a.btn,
+a.btn:visited
+a.btn:visited,
+.page-numbers,
+.wp-block-button__link {
+    font-size: var(--font-base);
+    font-weight: 500;
+    line-height: var(--line-height-tight);
+    padding: var(--space-sm) var(--space-lg);
+    margin: var(--space-sm) auto;
+    color: var(--black);
+    outline: none;
+    display: inline-block;
+    border-radius: 5rem;
+    border: 3px solid var(--brand-orange);
+    background-color: var(--white);
+    transition: all 0.5s ease;
+}
+
+a.btn:hover,
+a.button:hover,
+input[type="submit"]:hover,
+.page-numbers:hover,
+.page-numbers.current {
+    color: var(--white);
+    border-radius: 5rem;
+    border-color:var(--light-gray);
+    background-color: var(--brand-orange);
+}
+
+a,
+input[type="reset"],
+input[type="submit"],
+input[type="button"],
+a img,
+a svg,
+.btn,
+.hover-overlay,
+a .icon,
+.hover-container .btn,
+.nav li.menu-item-has-children ul,
+.nav li.menu-item-has-children ul li.menu-item-has-children ul,
+.page-numbers,
+.wp-block-button__link {
+    transition: all 0.5s ease;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: var(--space-sm);
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.img-responsive,
+.img-responsive img {
+    width: 100%;
+    height: auto;
+}
+
+.clear {
+    clear: both;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+
+.clearfix {
+    display: block;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+section {
+    padding: var(--space-md) 0;
+}
+
+section h2:first-child {
+    margin-top: 0;
+}
+
+section#page {
+    padding: 0;
+}
+
+.section-top {
+    padding-top: var(--space-lg);
+}
+
+.section-bottom {
+    padding-bottom: var(--space-lg);
+}
+
+.bg-white {
+    background-color: var(--white);
+}
+
+.bg-gray {
+    background-color: #efefef;
+}
+
+.full-bg {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+}
+
+.parallax {
+    background-attachment: fixed;
+}
+
+img.alignright {
+    float: right;
+    margin: 0 0 var(--space-xs) var(--space-xs);
+}
+
+img.alignleft {
+    float: left;
+    margin: 0 var(--space-xs) var(--space-xs) 0;
+}
+
+img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alignright {
+    float: right;
+}
+
+.alignleft {
+    float: left;
+}
+
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.aiosrs-rating-wrap {
+    display: none;
+}
+
+/* used on anti-spam form */
+#theForm,
+.gform_validation_container {
+    position: absolute;
+    top: 0;
+    left: -99999px;
+}
+
+.cookies {
+    position: relative;
+    z-index: 99;
+}
+
+.cookies .wrapper {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: var(--white);
+    font-size: var(--font-3xs);
+    line-height: var(--line-height-normal);
+    font-weight: 300;
+    padding: var(--space-3xs);
+    border-radius: var(--space-4xs) 0 0 0;
+}
+
+.cookies .wrapper p {
+    margin-bottom: 0;
+}
+
+.cookies .wrapper svg {
+    fill: var(--white);
+    max-width: var(--space-3xs);
+    margin-left: var(--space-4xs);
+}
+
+.cookies .wrapper a {
+    color: var(--white);
+}
+
+.cookies .wrapper a:hover {
+    color: rgba(12, 102, 168, 0.5);
+}
+
+/*------------------------------------*\
+    TAXONOMY FILTER
+\*------------------------------------*/
+.taxonomy-filter {
+    display: flex;
+    justify-content: space-evenly;
+    gap: var(--space-sm);
+    margin: var(--space-sm-xl) auto;
+    padding: 0 var(--space-md);
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    position: relative;
+    max-width: 800px;
+}
+
+.taxonomy-filter-item {
+    text-align: center;
+}
+
+.taxonomy-filter-item a {
+    color: var(--dark);
+    text-decoration: none;
+    font-size: calc(var(--font-md) * 0.9);
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 0 var(--space-2xs) var(--space-2xs);
+    display: inline-block;
+}
+
+.taxonomy-filter-item a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--brand-orange);
+    transition: width 0.3s ease;
+    opacity: 0;
+}
+
+/* Override animation when hovering or active */
+.taxonomy-filter-item a:hover:after,
+.taxonomy-filter-item a.active:after {
+    opacity: 1;
+    width: 100%;
+}
+
+.taxonomy-filter-item a:hover,
+.taxonomy-filter-item a.active {
+    color: var(--brand-orange);
+}
+
+@media (width < 768px) {
+    .taxonomy-filter-item a {
+        margin: auto auto var(--space-4xs);
+    }
+}
+
+@media (width > 768px) {
+    .taxonomy-filter-item {
+        width: auto;
+        max-width: none;
+        padding: var(--space-2xs) var(--space-sm);
+    }
+}

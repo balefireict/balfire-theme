@@ -1,0 +1,21 @@
+/*--- Screens CSS ---*/
+
+/* styles for viewport width up to 768px */
+@media (width <= 768px) {}
+
+/* styles for viewport width from 768px and up */
+@media (width >= 768px) {}
+
+/* styles for viewport width from 1024px and up */
+@media (width >= 1024px) {}
+
+/* Range between values - styles for viewport width between 768px and 1024px*/
+@media (768px <= width <= 1024px) {}
+
+/* Minimum width */
+/* styles for viewport width from 1024px and up */
+@media (width >= 1024px) {}
+
+/* Minimum width */
+/* styles for viewport width from 1024px and up */
+@media (width >= 1280px) {}

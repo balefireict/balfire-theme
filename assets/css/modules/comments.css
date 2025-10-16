@@ -1,0 +1,5 @@
+/* Comments Styles */
+.comments-area {
+    margin-top: var(--space-md);
+    padding: var(--space-xs);
+}

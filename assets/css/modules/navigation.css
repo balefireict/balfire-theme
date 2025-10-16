@@ -1,0 +1,595 @@
+/* Base Navigation Styles */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 37px;
+    height: 32px;
+    margin-left: auto;
+    color: inherit;
+}
+
+.mobile-menu-toggle svg {
+    width: 100%;
+    height: 100%;
+}
+
+.mobile-menu-toggle path {
+    fill: var(--white);
+}
+
+/* Navigation Modifiers */
+.nav--light ul li a {
+    color: var(--white);
+}
+
+#masthead.scrolled .mobile-menu-toggle svg path {
+    fill: var(--text-dark);
+}
+
+.nav--center {
+    justify-content: center;
+}
+
+.nav--end {
+    justify-content: flex-end;
+}
+
+.nav--space-between {
+    justify-content: space-between;
+}
+
+/* Mobile Back Button - Hidden by default */
+.menu-back {
+    display: none;
+}
+
+/* Close Button - Hidden by default */
+.nav-close {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-main ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--brand-orange);
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Mobile Navigation */
+@media (width <= 48rem) {
+    body {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+        z-index: 999;
+    }
+
+    /* Hide main navigation on mobile */
+    .nav-container .nav-main {
+        display: none;
+    }
+
+    /* Off-canvas menu */
+    .nav-links {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 92vw;
+        height: 100vh;
+        background-color: var(--white);
+        padding: 0;
+        overflow-x: visible;
+        transition: left 0.3s ease-in-out;
+        z-index: 1000;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Show navigation inside off-canvas menu */
+    .nav-links .nav-main {
+        display: block;
+        width: 100%;
+        margin-top: var(--space-lg);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-links .nav-main ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links .nav-main ul li {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    .nav-links .nav-main ul li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-links .nav-main ul li a {
+        display: block;
+        padding: var(--space-2xs);
+        color: var(--dark);
+        font-weight: 500;
+        font-size: var(--font-base);
+        text-decoration: none;
+    }
+
+    body.menu-open .nav-links {
+        left: 0;
+    }
+
+    .menu-back {
+        display: block;
+        margin: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .menu-back .back-button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        padding: var(--space-2xs);
+        color: var(--dark);
+        font-weight: 500;
+        font-size: var(--font-base);
+        background: none;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+    }
+
+    .menu-back .back-button svg {
+        width: 16px;
+        height: 16px;
+        transform: rotate(90deg);
+        margin-right: var(--space-2xs);
+    }
+
+    .nav-close {
+        display: block;
+        position: absolute;
+        top: var(--space-sm);
+        right: var(--space-sm);
+        width: 31px;
+        height: 31px;
+        padding: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1002;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .nav-close:hover {
+        transform: scale(1.1);
+    }
+
+    .nav-close svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .nav-close path {
+        fill: var(--dark);
+        transition: fill 0.2s ease-in-out;
+    }
+
+    .nav-close:hover path {
+        fill: var(--brand-orange);
+    }
+
+    /* Mobile Navigation Styles */
+    .nav-links .nav-main {
+        display: block;
+        width: 100%;
+        margin-top: var(--space-lg);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Mobile Submenu Styles */
+    .nav-links .nav-main ul li .sub-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 92vw;
+        height: 100vh;
+        background-color: var(--white);
+        padding: 0;
+        margin: 0;
+        transition: transform 0.3s ease-in-out;
+        z-index: 1001;
+    }
+
+    .nav-links .nav-main ul li .sub-menu.active {
+        display: block;
+    }
+
+    /* Mobile Toggle Button */
+    .submenu-toggle {
+        position: absolute;
+        right: var(--space-3xs);
+        top: 50%;
+        transform: translateY(-50%);
+        width: 11px;
+        height: 11px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        margin-left: 5px;
+        z-index: 2;
+    }
+
+    .submenu-toggle svg {
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .submenu-toggle polyline {
+        stroke: var(--mid-gray);
+        stroke-width: 8;
+    }
+
+    /* When submenu is active, slide parent menu left */
+    .nav-links .nav-main.submenu-active,
+    .nav-links .nav-main .sub-menu.submenu-active {
+        transform: translateX(-100%);
+    }
+
+    /* Remove desktop-only styles in mobile */
+    .nav-main ul li .sub-menu .sub-menu {
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 92vw;
+        height: 100vh;
+    }
+
+    /* Navigation States */
+    .scrolled .submenu-toggle polyline {
+        stroke: var(--mid-gray);
+    }
+
+    .nav--light .submenu-toggle polyline {
+        stroke: var(--mid-gray);
+    }
+
+    .nav--dark .submenu-toggle polyline {
+        stroke: var(--mid-gray);
+    }
+
+    /* Remove conflicting desktop styles */
+    .nav-main ul li:last-child .sub-menu .sub-menu,
+    .nav-main ul li.edge .sub-menu .sub-menu {
+        left: 100%;
+        right: auto;
+    }
+
+    .nav-main ul li.menu-item-has-children > a {
+        padding-right: 24px; /* Increased space for toggle */
+    }
+
+    .nav-main ul li .sub-menu li {
+        width: 100%;
+    }
+
+    .nav-main ul li .sub-menu a {
+        display: block;
+        padding: var(--space-2xs) var(--space-sm);
+        color: var(--dark);
+        font-size: var(--font-sm);
+        white-space: nowrap;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .nav-main ul li .sub-menu a:hover {
+        background-color: transparent;
+        color: inherit;
+    }
+
+    /* Navigation States */
+    .nav-main ul li a:hover {
+        color: inherit;
+    }
+
+    /* Scrolled State */
+    .scrolled .nav-main ul li a {
+        color: var(--dark);
+    }
+
+}
+
+/* Desktop Navigation */
+@media (width >= 48rem) {
+    .nav-links {
+        display: contents;
+    }
+
+    .nav-container .nav-main {
+        display: flex;
+    }
+
+    .nav-main ul {
+        flex-direction: row;
+        gap: var(--space-2xs);
+    }
+
+    .nav-main ul li a {
+        padding: 0 var(--space-3xs-2xs);
+        font-size: var(--font-base);
+    }
+
+    /* Desktop Submenu Effect */
+    .nav-main ul li .sub-menu.active {
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .submenu-toggle {
+        right: var(--space-4xs);
+    }
+
+    .submenu-toggle polyline {
+        stroke: var(--mid-gray);
+        stroke-width: 8;
+        transition: stroke 0.3s ease-in-out;
+    }
+
+    /* Top level menu toggle arrows */
+    .nav-main > ul > li > .submenu-toggle polyline {
+        stroke: var(--mid-gray);
+    }
+
+    .scrolled .nav-main > ul > li > .submenu-toggle polyline {
+        stroke: var(--mid-gray);
+    }
+
+    /* Make submenu toggle arrows point right and match text color */
+    .nav-main ul li .sub-menu .menu-item-has-children > .submenu-toggle {
+        right: var(--space-3xs);
+    }
+
+    .nav-main ul li .sub-menu .menu-item-has-children > .submenu-toggle svg {
+        transform: rotate(-90deg);
+    }
+
+    .nav-main ul li .sub-menu .submenu-toggle polyline {
+        stroke: var(--mid-gray);
+    }
+
+    /* Update submenu hover states */
+    .nav-main ul li .sub-menu li:hover > a {
+        background-color: var(--dark);
+        color: var(--white);
+    }
+
+    .nav-main ul li .sub-menu li:hover > .submenu-toggle polyline {
+        stroke: var(--mid-gray);
+    }
+
+    /* Navigation Animations */
+    .nav-main ul li a {
+        position: relative;
+    }
+
+    .nav-main ul li a::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: var(--brand-orange);
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-main ul li a:hover::after {
+        transform: scaleX(1);
+    }
+
+    .nav-main ul li a:hover::after,
+    .nav-main ul li.current-menu-item a::after,
+    .nav-main ul li.current-menu-ancestor a::after {
+        transform: scaleX(1);
+    }
+
+    /* Remove underline animation from submenu items */
+    .nav-main ul li .sub-menu a::after {
+        display: none;
+    }
+
+    /* Main Navigation */
+    .nav-main {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .nav-main ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .nav-main ul.sub-menu {
+        padding: 0;
+        margin: auto 0;
+    }
+
+    .nav-main ul li {
+        position: relative;
+        padding: 0 var(--space-xs);
+    }
+
+    .nav-main ul li a {
+        display: inline-block;
+        padding: var(--space-4xs) var(--space-2xs);
+        color: var(--white);
+        font-size: calc(var(--font-base) - 1px);
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Toggle Button for Submenus */
+    .submenu-toggle {
+        position: absolute;
+        right: var(--space-3xs);
+        top: 50%;
+        transform: translateY(-50%);
+        width: 11px;
+        height: 11px;  
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        margin-inline-start: 5px;
+        padding: 0;
+    }
+
+    .submenu-toggle svg {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .submenu-toggle.active svg {
+        transform: rotate(180deg);
+    }
+
+    .submenu-toggle polyline {
+        stroke: var(--mid-gray);
+        stroke-width: 8;
+        transition: stroke 0.3s ease-in-out;
+    }
+
+    /* Navigation States */
+    .scrolled .submenu-toggle polyline {
+        stroke: var(--mid-gray);
+        margin-left: 8px;
+    }
+
+    /* Navigation Modifiers */
+    .nav--light .submenu-toggle polyline {
+        stroke: var(--mid-gray);
+    }
+
+    .nav--dark .submenu-toggle polyline {
+        stroke: var(--mid-gray);
+    }
+
+    /* Submenu Styles */
+    .nav-main ul li .sub-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 200px;
+        background-color: var(--white);
+        padding: 0;
+        margin: 0;
+        z-index: 1000;
+        flex-direction: column;
+    }
+
+    /* Third Level Menu */
+    .nav-main ul li .sub-menu .sub-menu {
+        top: 0;
+        left: 100%;
+    }
+
+    /* Handle edge cases for third level menu */
+    .nav-main ul li:last-child .sub-menu .sub-menu,
+    .nav-main ul li.edge .sub-menu .sub-menu {
+        left: auto;
+        right: 100%;
+    }
+
+    .nav-main ul li.menu-item-has-children > a {
+        padding-right: 24px; /* Increased space for toggle */
+    }
+
+    .nav-main ul li .sub-menu.active {
+        display: block;
+    }
+
+    .nav-main ul li .sub-menu li {
+        width: 100%;
+    }
+
+    .nav-main ul li .sub-menu a {
+        display: block;
+        padding: var(--space-2xs) var(--space-sm);
+        color: var(--dark);
+        font-size: calc(var(--font-base) - 1px);
+        white-space: nowrap;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-main ul li .sub-menu a:hover {
+        background-color: var(--dark);
+        color: var(--white);
+    }
+
+    /* Navigation States */
+    .nav-main ul li a:hover,
+    .nav-main ul li a:hover polyline {
+        color: var(--brand-orange);
+    }
+
+    /* Scrolled State */
+    .scrolled .nav-main ul li a {
+        color: var(--dark);
+    }
+
+    .menu-back,
+    .nav-close {
+        display: none !important;
+    }
+}
+

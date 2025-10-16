@@ -1,0 +1,284 @@
+.container,
+section.container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto auto;
+    padding-inline: var(--space-md);
+}
+
+.container-no-padding,
+section.container-no-padding {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto auto;
+    padding-inline: 0;
+}
+
+.container.full-width {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: inherit;
+}
+
+.grid-container > * {
+    grid-column: span 12;
+}
+
+/*--- Gap Clamps ---*/
+.gap-xs {
+    gap: var(--space-xs);
+}
+
+.gap-sm {
+    gap: var(--space-sm);
+}
+
+.gap-md {
+    gap: var(--space-md);
+}
+
+.gap-lg {
+    gap: var(--space-lg);
+}
+
+.gap-xl {
+    gap: var(--space-xl);
+}
+
+.gap-2xl {
+    gap: var(--space-2xl);
+}
+
+.gap-3xl {
+    gap: var(--space-3xl);
+}
+
+/*--- Gap Clamps Custom space pairs ---*/
+.gap-md-lg {
+    gap: var(--space-md-lg);
+}
+
+.gap-33-50 {
+    gap: var(--space-2xs-lg);
+}
+
+/* Team Grid */
+.flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flex-grid-item {
+    flex: 0 1 calc(33.333% - var(--space-2xs-lg));
+}
+
+/* 40/60 Grid */
+.grid-40 {
+    grid-column: span 5;
+}
+
+.grid-60 {
+    grid-column: span 7;
+}
+
+#cols-40-60 .container {
+    margin: var(--space-xl) auto;
+}
+
+#cols-40-60 .grid-container {
+    gap: var(--space-lg);
+    align-items: center;
+}
+
+#cols-40-60 .content-wrap {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+#cols-40-60 .content h2 {
+    font-size: var(--font-2xl);
+    margin-bottom: var(--space-md-lg);
+    line-height: var(--line-height-snug);
+    max-width: 405px;
+}
+
+#cols-40-60 .content h2.no-padding {
+    margin-bottom: auto;
+}
+
+#cols-40-60 .content h3 {
+    font-weight: 500;
+    margin-bottom: var(--space-sm);
+    margin: 0;
+    line-height: var(--line-height-tight);
+}
+
+#cols-40-60 h3.bold-head {
+    color: var(--dark);
+    font-size: var(--font-lg);
+    font-weight: 500;
+    margin: var(--space-4xs) 0 var(--space-md-lg);
+}
+
+#cols-40-60 .row-even .grid-40 {
+    order: 2;
+}
+
+#cols-40-60 .row-even .grid-60 {
+    order: 1;
+}
+
+@media (width < 40rem) {
+    .flex-grid-item {
+        flex: 0 1 100%;
+    }
+    .grid-40,
+    .grid-60 {
+        grid-column: span 12;
+    }
+
+    #cols-40-60 .grid-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* All rows - Image first, text second */
+    #cols-40-60 .content-wrap {
+        order: 2;
+    }
+
+    #cols-40-60 .grid-60 {
+        order: 1;
+    }
+
+    #cols-40-60 .content {
+        padding: var(--space-2xs) 0;
+    }
+}
+
+@media (width >= 40rem) and (width < 48rem) {
+    .grid-75 {
+        grid-column: span 9;
+    }
+
+    .grid-66 {
+        grid-column: span 8;
+    }
+    
+    .grid-50 {
+        grid-column: span 6;
+    }
+
+    .grid-50-sm {
+        grid-column: span 6;
+    }
+    
+    .grid-33 {
+        grid-column: span 4;
+    }
+
+    .grid-33-50 {
+        grid-column: span 4;
+    }
+
+    .grid-25 {
+        grid-column: span 3;
+    }
+
+    #cols-40-60 .row-odd .grid-40 {
+        order: 1;
+    }
+
+    #cols-40-60 .row-odd .grid-60 {
+        order: 2;
+    }
+
+    #cols-40-60 .row-even .grid-40 {
+        order: 1;
+    }
+
+    #cols-40-60 .row-even .grid-60 {
+        order: 2;
+    }
+
+    #cols-40-60 .content {
+        padding: var(--space-sm) 0;
+        text-align: center;
+    }
+}
+
+@media (width >= 48rem) {
+    .grid-75 {
+        grid-column: span 9;
+    }
+
+    .grid-66 {
+        grid-column: span 8;
+    }
+    
+    .grid-50 {
+        grid-column: span 6;
+    }
+
+    .grid-33-50 {
+        grid-column: span 4;
+    }
+    
+    .grid-33 {
+        grid-column: span 4;
+    }
+    
+    .grid-25 {
+        grid-column: span 3;
+    }
+    .flex-grid-item {
+        padding: var(--space-2xs) var(--space-3xs);
+    }
+    .grid-40 .content {
+        max-width: calc(100% - 1.5dvw);
+    }
+}
+
+/* Team Grid Styles */
+#home-team-grid {
+    position: relative;
+    padding: var(--space-xl) 0;
+}
+
+.team-grid {
+    display: grid;
+    gap: 2rem;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.team-grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-grid-item .grid-image {
+    margin-bottom: 1.5rem;
+}
+
+.team-grid-item .grid-text {
+    text-align: center;
+}
+
+/* Mobile (default) */
+@media screen and (min-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
