@@ -8,61 +8,8 @@
 
 // Function to initialize jQuery functionality
 function initializeJQuery($) {
-    // Move navigation to off-canvas menu on mobile
-    function moveNavigation() {
-        const $mainNav = $('#nav-main');
-        const $secondaryNav = $('#nav-secondary');
-        const $navLinks = $('.nav-links');
-        const $headerWrapper = $('#header .wrapper');
-        
-        // Debug: Check if elements exist
-        console.log('Debug - moveNavigation:', {
-            mainNavFound: $mainNav.length,
-            secondaryNavFound: $secondaryNav.length,
-            navLinksFound: $navLinks.length,
-            windowWidth: window.innerWidth
-        });
-        
-        if (window.innerWidth <= 768) {
-            // Move primary nav to mobile menu if not already there (insert at the beginning)
-            if ($mainNav.length && !$navLinks.find('#nav-main').length) {
-                $mainNav.prependTo($navLinks);
-            }
-            
-            // Move secondary nav to mobile menu if not already there (insert after primary nav)
-            if ($secondaryNav.length && !$navLinks.find('#nav-secondary').length) {
-                console.log('Debug - Moving secondary nav to mobile menu');
-                // Wrap secondary nav if not already wrapped
-                if (!$secondaryNav.parent().hasClass('secondary-nav-wrapper')) {
-                    console.log('Debug - Wrapping secondary nav');
-                    $secondaryNav.wrap('<div class="secondary-nav-wrapper"></div>');
-                }
-                console.log('Debug - Appending secondary nav to nav-links');
-                $secondaryNav.parent().appendTo($navLinks);
-                console.log('Debug - Secondary nav should now be in off-canvas');
-            } else {
-                console.log('Debug - Secondary nav not moved:', {
-                    secondaryNavExists: $secondaryNav.length > 0,
-                    alreadyInNavLinks: $navLinks.find('#nav-secondary').length > 0
-                });
-            }
-        } else {
-            // Move primary nav back to header if currently in mobile menu
-            if ($mainNav.length && $navLinks.find('#nav-main').length) {
-                $mainNav.appendTo($headerWrapper);
-                // Close mobile menu if it's open
-                closeMobileMenu();
-            }
-            
-            // Move secondary nav back to its original location (you'll need to specify where)
-            if ($secondaryNav.length && $navLinks.find('#nav-secondary').length) {
-                // You can customize where the secondary nav goes on desktop
-                // For now, we'll just hide it in the off-canvas menu
-                // Uncomment the next line if you want to move it somewhere specific on desktop:
-                // $secondaryNav.parent().appendTo($headerWrapper);
-            }
-        }
-    }
+    // Navigation is now PHP-templated in the off-canvas menu
+    // No need to move elements with JavaScript
 
     // Handle phone number anti-spam
     $('.phone-link').each(function() {
@@ -74,12 +21,6 @@ function initializeJQuery($) {
             $phoneText.text(phone);
         }
     });
-
-    // Initial move
-    moveNavigation();
-
-    // Move on resize
-    $(window).on('resize', moveNavigation);
 
     // Initial scroll position check
     if ($(window).scrollTop() > 50) {

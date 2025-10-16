@@ -235,13 +235,18 @@ section {
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(47, 46, 46, 0.88);
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 999;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
 
 .menu-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+body.menu-open .menu-overlay {
     display: block;
     opacity: 1;
 }
@@ -311,7 +316,7 @@ section {
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 1001;
+    z-index: 9999;
     transition: transform 0.2s ease-in-out;
 }
 
@@ -338,15 +343,16 @@ section {
     position: fixed;
     top: 0;
     left: -100%;
-    width: 92vw;
+    width: 95vw;
     height: 100vh;
     background-color: #000;
     color: #fff;
     padding: 0;
-    overflow-x: visible;
+    overflow-y: auto;
+    overflow-x: hidden;
     transition: left 0.3s ease-in-out;
     z-index: 1000;
-    box-shadow: 2px 0 8px #0000001a;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
 }
 
 body.menu-open .nav-links {
@@ -457,35 +463,41 @@ body.menu-open .nav-links {
     position: fixed;
     top: 0;
     left: 100%;
-    width: 100vw;
+    width: 95vw;
     height: 100vh;
     background: #000;
     padding: 60px 0 0 0;
     margin: 0;
     transition: transform 0.3s ease-in-out;
     z-index: 1001;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .nav-links #nav-main li .sub-menu.active {
     display: block;
-    transform: translateX(-100%);
+    left: 0;
+    transform: translateX(0);
 }
 
 #nav-main li .sub-menu .sub-menu {
     position: fixed;
     top: 0;
     left: 100%;
-    width: 100vw;
+    width: 95vw;
     height: 100vh;
     background: #000;
     padding: 60px 0 0 0;
     margin: 0;
     transition: transform 0.3s ease-in-out;
     z-index: 1002;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #nav-main li .sub-menu .sub-menu.active {
-    transform: translateX(-100%);
+    left: 0;
+    transform: translateX(0);
 }
 
 #nav-main li.menu-item-has-children>a {
@@ -1125,13 +1137,15 @@ a.vc_inline-link {
     position: fixed;
     top: 0;
     left: 100%;
-    width: 92vw;
+    width: 95vw;
     height: 100vh;
     background: #000;
-    padding: 0;
+    padding: 60px 0 0 0;
     margin: 0;
     transition: transform 0.3s ease-in-out;
     z-index: 1001;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .secondary-nav-wrapper #nav-secondary .sub-menu.active {
@@ -1186,6 +1200,21 @@ a.vc_inline-link {
     flex: 1;
 }
 
+/* Hide desktop navigation on mobile, show mobile navigation */
+#nav-main-wrapper {
+    display: none;
+}
+
+/* Hide secondary nav in header (only show in off-canvas) */
+#nav-secondary-wrapper {
+    display: none !important;
+}
+
+/* Mobile off-canvas navigation is visible by default */
+.mobile-menu-toggle {
+    display: block;
+}
+
 @media only screen and (min-width: 768px) {}
 
 @media only screen and (min-width: 1024px) {
@@ -1193,6 +1222,21 @@ a.vc_inline-link {
     /*
     ///// HEADER NAV MENU /////
     */
+    
+    /* Show desktop primary navigation only, hide mobile toggle */
+    #nav-main-wrapper {
+        display: block;
+    }
+    
+    /* Keep secondary nav hidden in header (only in off-canvas) */
+    #nav-secondary-wrapper {
+        display: none !important;
+    }
+    
+    .mobile-menu-toggle {
+        display: none;
+    }
+    
     #header .wrapper {
         display: flex;
         flex-direction: row;

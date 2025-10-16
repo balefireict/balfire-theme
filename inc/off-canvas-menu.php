@@ -9,10 +9,18 @@
             <path id="x-mark" d="M32.205,28.188,20.6,16.576,32.205,4.981,28.188,1,16.583,12.6,4.986,1,1,4.986,12.611,16.611,1,28.219l3.986,3.986,11.635-11.62,11.6,11.62Z" transform="translate(-1 -1)" fill="#726e6e"/>
         </svg>
     </button>
-    <?php
-    // The main navigation will be moved here via JavaScript on mobile
-    // The secondary navigation will also be moved here via JavaScript on mobile
-    ?>
+    
+    <?php if (has_nav_menu('primary-nav')): ?>
+        <nav class="nav mobile-nav-primary" role="navigation">
+            <?php balefire_primary_nav(); ?>
+        </nav>
+    <?php endif; ?>
+    
+    <?php if (has_nav_menu('secondary-nav')): ?>
+        <div class="secondary-nav-wrapper">
+            <?php balefire_secondary_nav(); ?>
+        </div>
+    <?php endif; ?>
 </div>
 
 <div class="menu-overlay"></div>
